@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Our Trees — Oppose the Depot Access Road, Ballyrichard</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #4caf78;
+    --green-pale: #e8f5ee;
+    --amber: #e07b00;
+    --red: #c0392b;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #cde0d6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: #fff;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(20, 50, 30, 0.92);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+  }
+  nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; }
+  nav .logo span { color: var(--green-light); }
+  nav .deadline {
+    background: var(--amber); color: #fff;
+    font-size: 0.8rem; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 100vh; min-height: 560px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('garden.jpg') center/cover no-repeat;
+    filter: brightness(0.45) saturate(0.7);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; color: #fff;
+    padding: 2rem;
+    max-width: 800px;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--green-light); color: #fff;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-weight: 900; line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: var(--green-light); }
+  .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6; max-width: 600px; margin: 0 auto 2rem;
+    color: #ffffff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 32px;
+    border-radius: 50px; font-size: 1rem; font-weight: 700;
+    text-decoration: none; cursor: pointer; border: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .btn-primary { background: var(--green-light); color: #fff; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.7); }
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.6); font-size: 0.8rem; text-align: center;
+  }
+  .scroll-hint::before { content: "↓"; display: block; font-size: 1.4rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--green-mid);
+    margin-bottom: 0.6rem;
+  }
+  h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 1.2rem; color: var(--green-dark);
+  }
+  p { line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── THREAT SECTION ── */
+  .threat { background: var(--green-pale); }
+  .threat-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .threat-card {
+    background: #fff; border-radius: 12px;
+    padding: 1.5rem; border-left: 4px solid var(--red);
+  }
+  .threat-card .icon { font-size: 2rem; margin-bottom: 0.6rem; }
+  .threat-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+  .threat-card p { font-size: 0.92rem; margin: 0; }
+
+  /* ── QUOTE ── */
+  .quote-block {
+    background: var(--green-dark); color: #fff;
+    border-radius: 14px; padding: 2.5rem 2rem; margin: 2.5rem 0;
+    position: relative;
+  }
+  .quote-block::before {
+    content: "\201C"; font-size: 5rem; line-height: 1;
+    color: var(--green-light); opacity: 0.5;
+    position: absolute; top: 0.5rem; left: 1.2rem;
+  }
+  .quote-block p { color: rgba(255,255,255,0.9); font-size: 1.05rem; font-style: italic; margin: 0; }
+  .quote-source { margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); font-style: normal; }
+
+  /* ── MAPS ── */
+  .maps { background: #f7f9f8; }
+  .map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+  @media(max-width: 700px) { .map-grid { grid-template-columns: 1fr; } }
+  .map-card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  .map-card img { width: 100%; display: block; }
+  .map-card-body { padding: 1rem 1.2rem; background: #fff; }
+  .map-card-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.3rem; }
+  .map-card-body p { font-size: 0.85rem; margin: 0; }
+  .map-badge {
+    display: inline-block; font-size: 0.7rem; font-weight: 700;
+    padding: 2px 10px; border-radius: 10px; margin-bottom: 0.5rem;
+  }
+  .badge-red { background: #fde8e8; color: var(--red); }
+  .badge-green { background: #e0f3ea; color: var(--green-dark); }
+
+  /* ── MCA TABLE ── */
+  .mca-callout {
+    background: #fff8e1; border: 2px solid var(--amber);
+    border-radius: 12px; padding: 1.5rem 1.8rem; margin-top: 2rem;
+  }
+  .mca-callout h3 { color: var(--amber); font-size: 1rem; margin-bottom: 0.5rem; }
+  .mca-callout p { font-size: 0.92rem; margin: 0; }
+  .mca-callout strong { color: var(--text); }
+
+  /* ── FORM SECTION ── */
+  .form-section { background: var(--green-dark); color: #fff; }
+  .form-section h2 { color: #fff; }
+  .form-section .section-label { color: var(--green-light); }
+  .form-section > .container > p { color: rgba(255,255,255,0.75); }
+
+  .snippets-label {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--green-light);
+    margin: 1.8rem 0 0.8rem;
+  }
+  .snippet-list { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.5rem; }
+  .snippet-item {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 0.9rem 1rem; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .snippet-item:hover { background: rgba(255,255,255,0.12); }
+  .snippet-item.selected {
+    background: rgba(76,175,120,0.25);
+    border-color: var(--green-light);
+  }
+  .snippet-item input[type=checkbox] {
+    margin-top: 2px; flex-shrink: 0;
+    width: 18px; height: 18px; accent-color: var(--green-light); cursor: pointer;
+  }
+  .snippet-title { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+  .snippet-preview { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+  .form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media(max-width: 600px) { .form-fields { grid-template-columns: 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .form-group input, .form-group textarea {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px; padding: 10px 14px; color: #fff;
+    font-size: 0.95rem; font-family: inherit;
+    transition: border-color 0.15s;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+  .form-group input:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--green-light);
+    background: rgba(255,255,255,0.15);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  .btn-submit {
+    width: 100%; padding: 16px; font-size: 1.05rem;
+    background: var(--green-light); color: #fff;
+    border: none; border-radius: 50px; font-weight: 800;
+    cursor: pointer; letter-spacing: 0.02em;
+    transition: background 0.15s, transform 0.15s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: #3d9a64; transform: translateY(-2px); }
+
+  .form-note {
+    font-size: 0.78rem; color: rgba(255,255,255,0.45);
+    text-align: center; margin-top: 1rem; line-height: 1.5;
+  }
+  .form-note a { color: var(--green-light); }
+
+  .preview-box {
+    background: rgba(0,0,0,0.3); border-radius: 10px;
+    padding: 1rem 1.2rem; margin-top: 1rem;
+    font-size: 0.82rem; color: rgba(255,255,255,0.7);
+    line-height: 1.6; white-space: pre-wrap; min-height: 60px;
+    border: 1px solid rgba(255,255,255,0.12);
+    font-family: monospace;
+  }
+  .preview-label {
+    font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--green-pale); }
+  .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  details {
+    background: #fff; border-radius: 10px;
+    border: 1px solid var(--border); overflow: hidden;
+  }
+  summary {
+    padding: 1rem 1.2rem; font-weight: 700; font-size: 0.95rem;
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+    color: var(--green-dark);
+  }
+  summary::after { content: "+"; font-size: 1.2rem; color: var(--green-mid); flex-shrink: 0; margin-left: 1rem; }
+  details[open] summary::after { content: "−"; }
+  details p { padding: 0 1.2rem 1rem; font-size: 0.92rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111; color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem 1.5rem;
+    font-size: 0.82rem; line-height: 1.7;
+  }
+  footer a { color: var(--green-light); text-decoration: none; }
+
+  /* ── DEADLINE BANNER ── */
+  .deadline-banner {
+    background: var(--amber); color: #fff;
+    text-align: center; padding: 0.8rem 1.5rem;
+    font-size: 0.9rem; font-weight: 700;
+    margin-top: 56px;
+  }
+  .deadline-banner span { font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Save Our <span>Trees</span></div>
+  <div class="deadline">Deadline: 12 June 2026</div>
+</nav>
+
+<!-- DEADLINE BANNER -->
+<div class="deadline-banner">
+  ⏰ Submit your objection before <strong>Friday 12 June 2026</strong> &nbsp;|&nbsp;
+  <span>Upcoming meetings: <strong>27 May</strong> My Place Midleton &nbsp;·&nbsp; <strong>28 May</strong> Mallow Station &nbsp;·&nbsp; <strong>10 Jun</strong> Webinar &nbsp;— all 4–8pm</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Ballyrichard, East Cork</div>
+    <h1>Save Our<br><span>Trees</span></h1>
+    <p>Irish Rail's preferred depot access route would destroy mature native oak and ash trees and cut a road through the gardens of local families. A better alternative exists. Help us stop it.</p>
+    <div class="hero-btns">
+      <a href="#object" class="btn btn-primary">Send your objection</a>
+      <a href="#background" class="btn btn-outline">Learn more</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to learn more</div>
+</div>
+
+<!-- THREAT -->
+<section class="threat" id="background">
+  <div class="container">
+    <div class="section-label">The Threat</div>
+    <h2>What is Irish Rail proposing to do?</h2>
+    <p>The Cork Area Commuter Rail Programme Phase 2 includes a new maintenance depot near Ballyrichard, east of Carrigtwohill. We support that. What we don't support is <strong>Option 7</strong> — the proposed access road chosen to reach it.</p>
+    <p>Of eight options assessed, Irish Rail selected the route that causes the most harm to local residents. Option 7 would pass directly through private residential gardens, requiring the compulsory acquisition of garden land and the felling of mature native trees that have stood for generations.</p>
+
+    <div class="threat-grid">
+      <div class="threat-card">
+        <div class="icon">🌳</div>
+        <h3>Mature native trees felled</h3>
+        <p>Oak, ash and other native trees that provide wildlife habitat, shade and shelter for families and for nature would be permanently lost.</p>
+      </div>
+      <div class="threat-card">
+        <div class="icon">🏡</div>
+        <h3>Gardens destroyed</h3>
+        <p>The access road would cut through the private residential gardens of multiple households — amenity built over decades, gone permanently.</p>
+      </div>
+      <div class="threat-card">
+        <div class="icon">🚛</div>
+        <h3>Workers' road only</h3>
+        <p>This is not a public road or passenger access. It serves depot staff only. Destroying a neighbourhood for a staff entrance is disproportionate.</p>
+      </div>
+      <div class="threat-card">
+        <div class="icon">🔀</div>
+        <h3>Better alternatives exist</h3>
+        <p>Option 8 and other locally proposed routes would reach the depot more directly without affecting a single residential property. Irish Rail's own report admits Option 7 only "narrowly" beat Option 8.</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>We accepted the disruption of Phase 1 — night works, noise, construction traffic — because we believe in public transport. We are not opposing the depot. We are opposing one unnecessary decision that would destroy our neighbourhood when a better option is right there on the map.</p>
+      <div class="quote-source">— A resident directly affected by Option 7</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPS -->
+<section class="maps" id="maps">
+  <div class="container">
+    <div class="section-label">The Evidence</div>
+    <h2>What the maps and scores show</h2>
+    <p>These images are taken directly from Irish Rail's own PC2 Project Report (Section 12.2, November 2025). They show all eight options assessed and the scoring table Irish Rail used to choose Option 7.</p>
+
+    <div class="map-grid">
+      <div class="map-card">
+        <img src="map_options.jpg" alt="All eight depot access road options shown on aerial map">
+        <div class="map-card-body">
+          <div class="map-badge badge-red">Figure 12-8 — PC2 Project Report</div>
+          <h3>All eight access road options</h3>
+          <p>The aerial map shows every route considered. Several alternatives avoid residential properties entirely. Option 7 (the preferred option) is highlighted — it runs directly through the gardens of local families.</p>
+        </div>
+      </div>
+      <div class="map-card">
+        <img src="map_option7.jpg" alt="MCA scoring table and Option 7 route map">
+        <div class="map-card-body">
+          <div class="map-badge badge-red">Figure 12-9 &amp; 12-10 — PC2 Project Report</div>
+          <h3>The scoring table and Option 7 route</h3>
+          <p>The MCA table (top) shows Option 7 and Option 8 scored <strong>identically</strong> as "Slightly Positive." The route map (bottom) shows Option 7 cutting through residential land. Irish Rail's own report says Option 7 only <strong>"narrowly"</strong> outscored Option 8.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mca-callout">
+      <h3>The key word in Irish Rail's own report</h3>
+      <p>The PC2 Project Report states: <strong>"Option 7 narrowly edges out Option 8 on Land Use Impacts and Local Environment Impacts. It is recommended that Option 7 be the Emerging Preferred Option."</strong><br><br>
+      A narrow margin decided a choice that permanently destroys residential gardens and mature native trees — when the alternative avoids all of this. We are asking Irish Rail to review that decision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-label">Questions &amp; Answers</div>
+    <h2>What you need to know</h2>
+    <div class="faq-list">
+      <details>
+        <summary>What is the alternative to Option 7?</summary>
+        <p>Option 8 is an alternative route that also scored "Slightly Positive" in Irish Rail's own assessment — the same top rating as Option 7. It reaches the depot without passing through any residential gardens. There is also an existing boreen near Carrigtwohill that, with upgrading, could provide access closer to the depot, with a public benefit to road users in the area.</p>
+      </details>
+      <details>
+        <summary>Why did Irish Rail choose Option 7 over Option 8?</summary>
+        <p>The report states Option 7 was preferred because it requires no bridge construction over the railway. Building a bridge is an engineering cost — it is not a reason to destroy residential gardens and native trees. Engineering cost should not override community and environmental impact in a planning assessment.</p>
+      </details>
+      <details>
+        <summary>Are we opposing the Cork Area Commuter Rail Programme?</summary>
+        <p>No. We fully support new stations, electrification, and the new depot. Many of us accepted significant disruption during Phase 1 construction because we believe in public transport. We are objecting to one specific decision: the choice of route for a staff access road when a less harmful alternative was available and assessed.</p>
+      </details>
+      <details>
+        <summary>What about the trees — are they protected?</summary>
+        <p>Oak and ash are native Irish species. Their ecological value — as habitat for bats, nesting birds, and invertebrates — must be assessed before any felling is authorised. Felling during the bird nesting season (February to August) would be a potential breach of the Wildlife Act 1976. No published ecological survey of the affected trees has been made available.</p>
+      </details>
+      <details>
+        <summary>Can this actually be changed? Is it too late?</summary>
+        <p>No — it is not too late. We are currently at Public Consultation No. 2, which is non-statutory. The Railway Order application to An Coimisin Pleanala has not yet been filed. This consultation period is specifically designed for the public to influence the design before it is locked in. The deadline for submissions is <strong>Friday 12 June 2026</strong>.</p>
+      </details>
+      <details>
+        <summary>What happens after the deadline?</summary>
+        <p>Irish Rail will prepare a PC2 Findings Report, then file a Railway Order application with An Coimisin Pleanala. At that point there will be a further statutory consultation — but the design will be much more fixed. The best chance to change the access road route is now, at this PC2 stage.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="object">
+  <div class="container">
+    <div class="section-label">Take Action</div>
+    <h2>Send your objection to Irish Rail</h2>
+    <p>Your submission will be sent directly to the CACR Project Team at Irish Rail. Every individual submission counts — Irish Rail is legally required to log and respond to each one. It takes two minutes.</p>
+    <p style="margin-top:0.5rem;">Select the points you want to make, add your name, and click Send. Your email app will open with a ready-to-send message addressed to <strong>CACR@irishrail.ie</strong>.</p>
+
+    <div class="snippets-label">Step 1 — Choose your points (select one or more)</div>
+    <div class="snippet-list" id="snippetList">
+
+      <label class="snippet-item" id="s0">
+        <input type="checkbox" data-idx="0" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">I oppose the destruction of residential gardens</div>
+          <div class="snippet-preview">Option 7 would require compulsory acquisition of private residential garden land from multiple households...</div>
+        </div>
+      </label>
+
+      <label class="snippet-item" id="s1">
+        <input type="checkbox" data-idx="1" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">Mature native trees must be protected</div>
+          <div class="snippet-preview">Option 7 requires the felling of mature native trees including oak and ash. No ecological survey has been published...</div>
+        </div>
+      </label>
+
+      <label class="snippet-item" id="s2">
+        <input type="checkbox" data-idx="2" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">A better alternative exists (Option 8 / the boreen)</div>
+          <div class="snippet-preview">Option 8 scored identically to Option 7 in Irish Rail's own assessment and avoids all residential property...</div>
+        </div>
+      </label>
+
+      <label class="snippet-item" id="s3">
+        <input type="checkbox" data-idx="3" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">The MCA decision margin was "narrow" — it should be reviewed</div>
+          <div class="snippet-preview">Irish Rail's own report states Option 7 "narrowly" outscored Option 8. The full MCA scoring table should be published...</div>
+        </div>
+      </label>
+
+      <label class="snippet-item" id="s4">
+        <input type="checkbox" data-idx="4" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">This is a workers' road — the impact is disproportionate</div>
+          <div class="snippet-preview">This access road serves depot staff only. Destroying multiple residential gardens for a staff entrance is disproportionate...</div>
+        </div>
+      </label>
+
+      <label class="snippet-item" id="s5">
+        <input type="checkbox" data-idx="5" onchange="updatePreview()">
+        <div>
+          <div class="snippet-title">I support the CACR programme — but not this route</div>
+          <div class="snippet-preview">I fully support the Cork Area Commuter Rail Programme. I am not opposing the depot. My objection is to Option 7 specifically...</div>
+        </div>
+      </label>
+
+    </div>
+
+    <div class="snippets-label">Step 2 — Your details</div>
+    <div class="form-fields">
+      <div class="form-group">
+        <label for="fname">Your name *</label>
+        <input type="text" id="fname" placeholder="Jane Smith" oninput="updatePreview()">
+      </div>
+      <div class="form-group">
+        <label for="feircode">Eircode (optional)</label>
+        <input type="text" id="feircode" placeholder="P25 XXXX" oninput="updatePreview()">
+      </div>
+      <div class="form-group full">
+        <label for="fextra">Additional comments (optional)</label>
+        <textarea id="fextra" placeholder="Add any personal details about how this proposal would affect you..." oninput="updatePreview()"></textarea>
+      </div>
+    </div>
+
+    <div class="preview-label">Email preview</div>
+    <div class="preview-box" id="previewBox">Select at least one point above to see your email...</div>
+
+    <button class="btn-submit" onclick="sendEmail()">📧 Open my email app to send &rarr;</button>
+
+    <div class="form-note">
+      This opens your default email app with a pre-written message to <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a>. You can edit the message before sending.<br>
+      You can also write directly to: <strong>CACR Community Liaison Officer, Iarnrod Eireann, 1 Horgan's Quay, Cork T23 PPT8</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is a community campaign site. All maps and quotes are sourced from the <em>CACR Phase 2 PC2 Project Report v05</em>, published by Iarnrod Eireann, and the <em>CACR PC1 Findings Report, November 2025</em>.</p>
+  <p style="margin-top:0.5rem;">Irish Rail contact: <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a> &nbsp;|&nbsp; 087-673-3387 &nbsp;|&nbsp; Consultation closes <strong>12 June 2026</strong></p>
+</footer>
+
+<script>
+const snippets = [
+  `I object to the selection of Option 7 for the depot access road. This proposal requires the construction of an access road through private residential gardens, permanently destroying established private amenity that has been cultivated over many decades. Affected residents have not been adequately consulted on this outcome, and compulsory acquisition of residential garden land should be a measure of absolute last resort.`,
+
+  `Option 7 requires the felling of mature native trees, including oak and ash, which provide habitat for protected species including bats and nesting birds. No ecological survey of these trees has been published as part of this consultation. Felling of trees during the bird nesting season (February to August) would constitute a potential breach of the Wildlife Act 1976 (as amended). The EIAR must include a full ecological assessment of all affected trees before this option can be progressed.`,
+
+  `A superior alternative exists. Option 8, which also scored "Slightly Positive" in Irish Rail's own Multi-Criteria Analysis -- the same top rating as Option 7 -- would reach the depot without affecting any residential property. There is also an existing boreen route near Carrigtwohill which, with upgrading, would provide access closer to the depot with a public benefit. Irish Rail's own PC2 Project Report acknowledges that Option 7 only "narrowly" outscored Option 8. A narrow margin does not justify the permanent destruction of residential gardens and native trees when a less harmful alternative exists.`,
+
+  `The Multi-Criteria Analysis used to select Option 7 over Option 8 relied on a margin described in Irish Rail's own report as "narrow." I request that the full MCA scoring table for all eight depot access options be published and made available for public scrutiny. In particular, I ask Irish Rail to explain how Option 7 scores better on Local Environmental Impacts than Option 8 when Option 7 requires the felling of mature native trees and Option 8 does not. I also ask how Option 7 scores better on Social Impacts when it requires compulsory acquisition of multiple residential gardens and Option 8 does not. The Department of Transport's Transport Appraisal Framework explicitly uses the number of residential properties directly impacted as an indicator under Social Impacts.`,
+
+  `The proposed access road under Option 7 serves depot workers only. It is not a public road, not a passenger access route, and not open to the travelling public. Permanently destroying multiple residential gardens and felling mature native trees to provide staff access to a maintenance facility -- when non-residential alternatives were assessed and scored equally -- is disproportionate and should not withstand scrutiny at Railway Order stage.`,
+
+  `I wish to be clear that I fully support the Cork Area Commuter Rail Programme and its goals for a sustainable, low-carbon transport network for Cork. I did not object during Phase 1 construction despite significant disruption. I do not oppose the depot. My objection is specifically and solely to the selection of Option 7 for the access road. I am asking Irish Rail to revisit this one decision and to select a route that does not require the destruction of residential property and native trees when equally-rated alternatives are available.`
+];
+
+function getChecked() {
+  return [...document.querySelectorAll('#snippetList input[type=checkbox]')]
+    .filter(cb => cb.checked)
+    .map(cb => parseInt(cb.dataset.idx));
+}
+
+function updatePreview() {
+  const checked = getChecked();
+  const name = document.getElementById('fname').value.trim();
+  const eircode = document.getElementById('feircode').value.trim();
+  const extra = document.getElementById('fextra').value.trim();
+
+  // Toggle selected style
+  document.querySelectorAll('.snippet-item').forEach((el, i) => {
+    el.classList.toggle('selected', el.querySelector('input').checked);
+  });
+
+  if (checked.length === 0) {
+    document.getElementById('previewBox').textContent = 'Select at least one point above to see your email...';
+    return;
+  }
+
+  let body = `Dear CACR Project Team,\n\nI am writing to formally object to the selection of Option 7 as the preferred access road route for the proposed Cork Area Commuter Rail depot.\n\n`;
+  body += checked.map(i => snippets[i]).join('\n\n');
+  if (extra) body += `\n\n${extra}`;
+  body += `\n\nI respectfully request a written response to this submission.\n\nYours sincerely,\n${name || '[Your name]'}`;
+  if (eircode) body += `\nEircode: ${eircode}`;
+
+  document.getElementById('previewBox').textContent = body;
+}
+
+function sendEmail() {
+  const checked = getChecked();
+  const name = document.getElementById('fname').value.trim();
+
+  if (checked.length === 0) {
+    alert('Please select at least one point to include in your objection.');
+    return;
+  }
+  if (!name) {
+    alert('Please enter your name.');
+    return;
+  }
+
+  const eircode = document.getElementById('feircode').value.trim();
+  const extra = document.getElementById('fextra').value.trim();
+
+  let body = `Dear CACR Project Team,\n\nI am writing to formally object to the selection of Option 7 as the preferred access road route for the proposed Cork Area Commuter Rail depot.\n\n`;
+  body += checked.map(i => snippets[i]).join('\n\n');
+  if (extra) body += `\n\n${extra}`;
+  body += `\n\nI respectfully request a written response to this submission.\n\nYours sincerely,\n${name}`;
+  if (eircode) body += `\nEircode: ${eircode}`;
+
+  const subject = encodeURIComponent('Objection to CACR Depot Access Road — Option 7, Ballyrichard');
+  const encodedBody = encodeURIComponent(body);
+  window.location.href = `mailto:CACR@irishrail.ie?subject=${subject}&body=${encodedBody}`;
+}
+</script>
+</body>
+</html>
