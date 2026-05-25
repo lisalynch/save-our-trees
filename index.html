@@ -436,7 +436,7 @@
     <div class="section-label">Take Action</div>
     <h2>Send your objection to Irish Rail</h2>
     <p>Your submission will be sent directly to the CACR Project Team at Irish Rail. Every individual submission counts — Irish Rail is legally required to log and respond to each one. It takes two minutes.</p>
-    <p style="margin-top:0.5rem;">Select the points you want to make, add your name, and click Send. Your email app will open with a ready-to-send message addressed to <strong>CACR@irishrail.ie</strong>. Alternatively, fill out the feedback form on Irish Rail's <a href="https://www.irishrail.ie/en-ie/about-us/iarnrod-eireann-projects-and-investments/cork-area-commuter-rail" target="_blank" rel="noopener" style="color: var(--green-light);">website</a>.</p>
+    <p style="margin-top:0.5rem;">Select the points you want to make, add your name, and click Send. Your email app will open with a ready-to-send message addressed to <strong>cacr@irishrail.ie</strong>. Alternatively, fill out the feedback form on Irish Rail's <a href="https://www.irishrail.ie/en-ie/about-us/iarnrod-eireann-projects-and-investments/cork-area-commuter-rail" target="_blank" rel="noopener" style="color: var(--green-light);">website</a>.</p>
 
     <div class="snippets-label">Step 1 — Choose your points (select one or more)</div>
     <div class="snippet-list" id="snippetList">
@@ -503,7 +503,7 @@
     <div class="form-fields">
       <div class="form-group">
         <label for="fname">Your name *</label>
-        <input type="text" id="fname" placeholder="Jane Smith" oninput="updatePreview()">
+        <input type="text" id="fname" placeholder="Peig Sayers" oninput="updatePreview()">
       </div>
       <div class="form-group">
         <label for="feircode">Eircode (optional)</label>
@@ -521,7 +521,7 @@
     <button class="btn-submit" onclick="sendEmail()">📧 Open my email app to send &rarr;</button>
 
     <div class="form-note">
-      This opens your default email app with a pre-written message to <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a>. You can edit the message before sending.<br>
+      This opens your default email app with a pre-written message to <a href="mailto:cacr@irishrail.ie">cacr@irishrail.ie</a>. You can edit the message before sending.<br>
       You can also write directly to: <strong>CACR Community Liaison Officer, Iarnród Éireann, 1 Horgan's Quay, Cork T23 PPT8</strong>
     </div>
   </div>
@@ -530,7 +530,7 @@
 <!-- FOOTER -->
 <footer>
   <p>This is a community campaign site. All maps and quotes are sourced from the <a href="https://www.irishrail.ie/_kontent/d2e85689-fbf9-010a-a02e-587ed94b5032/e6bc15d7-df35-44d7-a3d3-384b3f9b71cb/Project_Report_PC2.pdf" target="_blank" rel="noopener" style="color: var(--green-light);"><em>CACR Phase 2 PC2 Project Report v05</em></a>, published by Iarnród Éireann, and the <em>CACR PC1 Findings Report, November 2025</em>.</p>
-  <p style="margin-top:0.5rem;">Irish Rail contact: <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a> &nbsp;|&nbsp; 087-673-3387 &nbsp;|&nbsp; Consultation closes <strong>12 June 2026</strong></p>
+  <p style="margin-top:0.5rem;">Irish Rail contact: <a href="mailto:cacr@irishrail.ie">cacr@irishrail.ie</a> &nbsp;|&nbsp; 087-673-3387 &nbsp;|&nbsp; Consultation closes <strong>12 June 2026</strong></p>
   <p style="margin-top:0.5rem;">Campaign enquiries: <a href="mailto:info@no2option7.org">info@no2option7.org</a></p>
   <p style="margin-top:0.5rem;"><a href="https://www.irishrail.ie/en-ie/about-us/iarnrod-eireann-projects-and-investments/cork-area-commuter-rail" target="_blank" rel="noopener">Cork Area Commuter Rail Phase 2 — Irish Rail project page</a></p>
 </footer>
@@ -607,7 +607,7 @@ function sendEmail() {
 
   const subject = encodeURIComponent('Objection to CACR Depot Access Road — Option 7, Ballyrichard');
   const encodedBody = encodeURIComponent(body);
-  window.location.href = `mailto:CACR@irishrail.ie?subject=${subject}&body=${encodedBody}`;
+  window.location.href = `mailto:cacr@irishrail.ie?subject=${subject}&body=${encodedBody}`;
 }
 </script>
 </body>
