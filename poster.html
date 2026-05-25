@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Save Our Neighbourhood — Poster</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background: #fff;
+    color: #111;
+    padding: 1.5cm;
+    max-width: 21cm;
+    margin: 0 auto;
+  }
+  @media print {
+    body { padding: 1cm; }
+    @page { size: A4; margin: 1cm; }
+  }
+
+  .header {
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 1.2rem;
+  }
+  .header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1a4a2e;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span { color: #2d7a4f; }
+  .header .subtitle {
+    font-size: 1.05rem;
+    color: #333;
+    margin-top: 0.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .deadline-box {
+    background: #e07b00;
+    color: #fff;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .box {
+    border: 2px solid #1a4a2e;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+  }
+  .box h2 {
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a4a2e;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid #cde0d6;
+    padding-bottom: 0.4rem;
+  }
+  .box ul {
+    padding-left: 1.1rem;
+  }
+  .box ul li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+    color: #222;
+  }
+  .box p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #222;
+  }
+  .box .highlight {
+    font-weight: 700;
+    color: #c0392b;
+  }
+
+  .action-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: stretch;
+  }
+  .action-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex: 1;
+  }
+  .action-box {
+    border: 2px solid #2d7a4f;
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex: 1;
+  }
+  .action-box .num {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1a4a2e;
+    flex-shrink: 0;
+    width: 1.5rem;
+    text-align: center;
+  }
+  .action-box .method {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #555;
+    display: block;
+  }
+  .action-box .value {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a4a2e;
+  }
+  .action-box .sub {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 0.1rem;
+    line-height: 1.3;
+  }
+  .qr-big {
+    flex-shrink: 0;
+    text-align: center;
+    border: 2px solid #1a4a2e;
+    border-radius: 8px;
+    padding: 0.8rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-big img {
+    width: 185px;
+    height: 185px;
+    display: block;
+  }
+  .qr-big p {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a4a2e;
+    margin-top: 0.45rem;
+  }
+
+  .meetings {
+    margin-bottom: 1.2rem;
+  }
+  .meetings h2 {
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a4a2e;
+    margin-bottom: 0.5rem;
+  }
+  .meetings table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .meetings th {
+    background: #1a4a2e;
+    color: #fff;
+    padding: 0.4rem 0.7rem;
+    text-align: left;
+    font-weight: 700;
+  }
+  .meetings td {
+    padding: 0.4rem 0.7rem;
+    border-bottom: 1px solid #cde0d6;
+    color: #222;
+  }
+  .meetings tr:last-child td { border-bottom: none; }
+
+  .footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    border-top: 1px solid #cde0d6;
+    padding-top: 0.6rem;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Save Our <span>Neighbourhood</span></h1>
+    <div class="subtitle">Irish Rail plans to build a workers' access road through the private gardens in Ballyrichard, felling mature trees and increasing round-the-clock traffic on Waterrock road.</div>
+  </div>
+
+  <div class="deadline-box">⏰ DEADLINE TO OBJECT: FRIDAY 12 JUNE 2026</div>
+
+  <div class="two-col">
+    <div class="box">
+      <h2>What is proposed — Option 7</h2>
+      <ul>
+        <li>Access road cut through <strong>private residential gardens</strong></li>
+        <li>Mature native <strong>oak and ash trees</strong> felled permanently</li>
+        <li><strong>Round-the-clock traffic</strong> on local roads — 160 depot parking spaces, multiple shift changes day and night</li>
+        <li>Drainage infrastructure routed to Castle Rock Avenue — <strong>flood risk</strong> concerns for Midleton unaddressed</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h2>Why we are objecting</h2>
+      <p>Irish Rail assessed <strong>eight options</strong> for the access road. Several avoid residential properties entirely.</p>
+      <br>
+      <p>Their own report says Option 7 was chosen on a <span class="highlight">"narrow" margin.</span></p>
+      <br>
+      <p>We <strong>support</strong> the Cork Area Commuter Rail Programme and the new depot. We are asking Irish Rail to choose a route that does not destroy our neighbourhood.</p>
+    </div>
+  </div>
+
+  <div class="action-row">
+    <div class="action-col">
+      <div class="action-box">
+        <span class="num">1</span>
+        <div>
+          <span class="method">Online</span>
+          <div class="value">no2option7.org</div>
+          <div class="sub">Takes 2 minutes</div>
+        </div>
+      </div>
+      <div class="action-box">
+        <span class="num">2</span>
+        <div>
+          <span class="method">Email</span>
+          <div class="value">CACR@irishrail.ie</div>
+          <div class="sub">Subject: Objection to Option 7</div>
+        </div>
+      </div>
+      <div class="action-box">
+        <span class="num">3</span>
+        <div>
+          <span class="method">Irish Rail Website</span>
+          <div class="value">irishrail.ie/CACR</div>
+          <div class="sub">Fill out the feedback form on Irish Rail's website</div>
+        </div>
+      </div>
+    </div>
+    <div class="qr-big">
+      <img src="data:image/png;base64,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" alt="QR code for no2option7.org">
+      <p>no2option7.org</p>
+    </div>
+  </div>
+
+  <div class="meetings">
+    <h2>Upcoming Public Meetings — Come Along and Have Your Say</h2>
+    <table>
+      <tr><th>Date</th><th>Location</th><th>Time</th></tr>
+      <tr><td><strong>Wednesday 27 May</strong></td><td>My Place, Midleton</td><td>4–8pm</td></tr>
+<tr><td><strong>Wednesday 10 June</strong></td><td>Online Webinar — email CACR@irishrail.ie for link</td><td>7–8:30pm</td></tr>
+    </table>
+  </div>
+
+</body>
+</html>
