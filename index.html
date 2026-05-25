@@ -339,6 +339,7 @@
         <div class="icon">🚗</div>
         <h3>Severe traffic impact</h3>
         <p>The depot plans include 160 car parking spaces on the Carrigtwohill side. The depot will operate around the clock, requiring multiple shift changes throughout the day and night. Workers will travel the Waterrock Road and all approaches to reach them — significantly increasing traffic for local residents at all hours.</p>
+        <p style="margin-top:0.6rem;">During construction, a <strong>very large team of construction workers</strong> are proposed to access the depot via Waterrock Road over the <strong>4 years</strong> needed to build the depot — with the potential for serious traffic congestion affecting residents throughout that period.</p>
       </div>
       <div class="threat-card">
         <div class="icon">💧</div>
@@ -469,7 +470,7 @@
         <input type="checkbox" data-idx="3" onchange="updatePreview()">
         <div>
           <div class="snippet-title">Significant traffic impact on local roads — around the clock</div>
-          <div class="snippet-preview">The depot plans show 160 car parking spaces on the Carrigtwohill side. The depot will operate around the clock with multiple shift changes, meaning workers will travel the Waterrock Road at all hours...</div>
+          <div class="snippet-preview">The depot plans show 160 car parking spaces on the Carrigtwohill side. The depot will operate around the clock with multiple shift changes, meaning workers will travel the Waterrock Road at all hours. During construction, a very large team of construction workers are proposed to use this route for 4 years...</div>
         </div>
       </label>
 
@@ -543,7 +544,7 @@ const snippets = [
 
   `Irish Rail assessed eight options for the depot access road. Several of these would reach the depot without passing through any residential gardens. The project team's own PC2 Project Report acknowledges that the margin used to justify Option 7 over other options was "narrow." A narrow margin does not justify the permanent destruction of residential gardens and mature native trees. I request that Irish Rail publish the full MCA scoring table for all eight options and provide a clear justification for why a route through residential properties was selected over alternatives that avoid them entirely.`,
 
-  `I wish to raise serious concerns about the traffic impact of Option 7 on local residents. The depot plans show 160 car parking spaces located on the Carrigtwohill side of the depot. The depot will operate around the clock, requiring multiple shift changes throughout the day and night. Workers will be required to travel the Waterrock Road and all local approach roads to reach these spaces at all hours. This will significantly increase traffic volumes on roads used by local residents. It is also unclear whether the Waterrock level crossing will remain open, which could cause severe congestion. The traffic impact of this access arrangement on the local road network and on residents has not been adequately addressed and must be fully assessed as part of the EIAR.`,
+  `I wish to raise serious concerns about the traffic impact of Option 7 on local residents. The depot plans show 160 car parking spaces located on the Carrigtwohill side of the depot. The depot will operate around the clock, requiring multiple shift changes throughout the day and night. Workers will be required to travel the Waterrock Road and all local approach roads to reach these spaces at all hours. This will significantly increase traffic volumes on roads used by local residents. It is also unclear whether the Waterrock level crossing will remain open, which could cause severe congestion. In addition, a very large team of construction workers are proposed to access the depot via Waterrock Road during the 4-year construction period, creating the potential for serious and sustained traffic congestion for residents throughout that time. The traffic impact of this access arrangement on the local road network and on residents has not been adequately addressed and must be fully assessed as part of the EIAR.`,
 
   `I wish to raise serious concerns about the drainage and flood risk associated with Option 7. Section 12.1.20 of the PC2 Project Report confirms that a foul rising main from the depot is to be routed along the proposed access road to Castle Rock Avenue. In addition, large floodwater drainage pipes from the new Waterrock housing estate are already being directed down Castle Rock Avenue and into the small stream by Waterrock House. The cumulative impact of this additional drainage load on the stream and on the downstream town of Midleton has not been demonstrated to have been adequately assessed. Midleton has already suffered severe flooding. No flood impact study appears to have been published as part of this consultation. I request that a comprehensive flood impact assessment covering all drainage works associated with Option 7 and the wider Waterrock development be completed and published before any decision is finalised.`,
 
@@ -577,7 +578,7 @@ function updatePreview() {
   let body = `Dear CACR Project Team,\n\nI am writing to formally object to the selection of Option 7 as the preferred access road route for the proposed Cork Area Commuter Rail depot.\n\n`;
   body += checked.map(i => snippets[i]).join('\n\n');
   if (extra) body += `\n\n${extra}`;
-  body += `\n\nI respectfully request a written response to this submission.\n\nYours sincerely,\n${name || '[Your name]'}`;
+  body += `\n\nI respectfully request a response to this submission.\n\nYours sincerely,\n${name || '[Your name]'}`;
   if (eircode) body += `\nEircode: ${eircode}`;
 
   document.getElementById('previewBox').textContent = body;
