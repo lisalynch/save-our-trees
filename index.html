@@ -37,6 +37,12 @@
   }
   nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; }
   nav .logo span { color: var(--green-light); }
+  nav .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  nav .nav-links a {
+    color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 600;
+    text-decoration: none; transition: color 0.15s;
+  }
+  nav .nav-links a:hover { color: var(--green-light); }
   nav .deadline {
     background: var(--amber); color: #fff;
     font-size: 0.8rem; font-weight: 700;
@@ -282,7 +288,10 @@
 <!-- NAV -->
 <nav>
   <div class="logo">Save Our <span>Neighbourhood</span></div>
-  <div class="deadline">Deadline: 12 June 2026</div>
+  <div class="nav-links">
+    <a href="technical-evidence.html">Technical Evidence</a>
+    <div class="deadline">Deadline: 12 June 2026</div>
+  </div>
 </nav>
 
 <!-- DEADLINE BANNER -->
@@ -363,7 +372,9 @@
 
     <div class="map-grid">
       <div class="map-card">
-        <img src="options.png" alt="All eight depot access road options shown on aerial map">
+        <a href="options-zoomed.png" target="_blank" rel="noopener">
+          <img src="options.png" alt="All eight depot access road options shown on aerial map — click to enlarge">
+        </a>
         <div class="map-card-body">
           <div class="map-badge badge-red">Figure 12-8 — PC2 Project Report</div>
           <h3>All eight access road options</h3>
@@ -392,6 +403,12 @@
       <h3>The key word in Irish Rail's own report</h3>
       <p>The PC2 Project Report states: <strong>"Option 7 narrowly edges out Option 8 on Land Use Impacts and Local Environment Impacts. It is recommended that Option 7 be the Emerging Preferred Option."</strong><br><br>
       A narrow margin decided a choice that permanently destroys residential gardens and mature native trees. We are asking Irish Rail to review that decision.</p>
+    </div>
+
+    <div style="margin-top:2rem; padding:1.5rem 1.8rem; background:#fff; border:2px solid var(--green-mid); border-radius:12px;">
+      <h3 style="color:var(--green-dark); font-size:1rem; margin-bottom:0.5rem;">Detailed technical evidence and legal grounds</h3>
+      <p style="font-size:0.92rem; margin-bottom:1rem;">We have prepared a detailed technical analysis of Irish Rail's own documents, with direct quotations and page references. This includes evidence from an independent ecological survey confirming protected bat species and Red-listed birds in the Option 7 corridor — evidence not considered in Irish Rail's assessment.</p>
+      <a href="technical-evidence.html" style="display:inline-block; background:var(--green-dark); color:#fff; padding:10px 24px; border-radius:50px; font-size:0.9rem; font-weight:700; text-decoration:none;">Read the technical evidence &rarr;</a>
     </div>
   </div>
 </section>
