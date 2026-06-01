@@ -5,23 +5,41 @@
 <title>Save Our Neighbourhood — Poster</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page { size: A4 portrait; margin: 0; }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: #fff;
+    background: #ccc;
     color: #111;
-    padding: 1.5cm;
-    max-width: 21cm;
-    margin: 0 auto;
   }
+
+  .page {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 1.2cm 1.3cm;
+    margin: 1cm auto;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
   @media print {
-    body { padding: 1cm; }
-    @page { size: A4; margin: 1cm; }
+    body { background: #fff; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 21cm;
+      height: 29.7cm;
+    }
   }
 
   .header {
     text-align: center;
     padding-bottom: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.9rem;
   }
   .header h1 {
     font-size: 3rem;
@@ -43,19 +61,21 @@
     background: #e07b00;
     color: #fff;
     text-align: center;
-    padding: 0.7rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 8px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 900;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.02em;
+    page-break-inside: avoid;
   }
 
   .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.2rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
   }
 
   .box {
@@ -95,13 +115,14 @@
   .action-row {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     align-items: stretch;
+    page-break-inside: avoid;
   }
   .action-col {
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.45rem;
     flex: 1;
   }
   .action-box {
@@ -164,7 +185,8 @@
   }
 
   .meetings {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
   }
   .meetings h2 {
     font-size: 0.85rem;
@@ -203,6 +225,7 @@
 </style>
 </head>
 <body>
+<div class="page">
 
   <div class="header">
     <h1>Save Our <span>Neighbourhood</span></h1>
@@ -271,5 +294,6 @@
     </table>
   </div>
 
+  </div><!-- /.page -->
 </body>
 </html>

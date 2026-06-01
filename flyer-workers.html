@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irish Rail Workers Flyer — Option 7 Objection</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page { size: A4 portrait; margin: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background: #bbb;
+    color: #111;
+  }
+
+  .page {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 1.1cm 1.4cm 0.9cm;
+    margin: 1cm auto;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45cm;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  /* HEADER */
+  .header {
+    background: #1a4a2e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.55cm 0.9cm;
+    text-align: center;
+  }
+  .header .to {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4caf78;
+    margin-bottom: 0.2cm;
+  }
+  .header h1 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .header h1 span { color: #4caf78; }
+  .header .sub {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 0.2cm;
+    line-height: 1.4;
+  }
+
+  /* DEADLINE */
+  .deadline {
+    background: #e07b00;
+    color: #fff;
+    text-align: center;
+    padding: 0.45cm 0.8cm;
+    border-radius: 7px;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    flex-shrink: 0;
+  }
+
+  /* BODY TEXT BLOCKS */
+  .block {
+    border-left: 4px solid #2d7a4f;
+    padding-left: 0.55cm;
+  }
+  .block h2 {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a4a2e;
+    margin-bottom: 0.22cm;
+  }
+  .block p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #222;
+  }
+  .block p strong { color: #111; }
+  .block p .red { color: #c0392b; font-weight: 700; }
+
+  /* ROUTE BOX */
+  .route-box {
+    background: #fff8e1;
+    border: 2px solid #e07b00;
+    border-radius: 7px;
+    padding: 0.5cm 0.65cm;
+  }
+  .route-box h2 {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e07b00;
+    margin-bottom: 0.22cm;
+  }
+  .route-box p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #333;
+  }
+  .route-box p strong { color: #111; }
+
+  /* OPTION 5 BOX */
+  .option5-box {
+    background: #e8f5ee;
+    border: 2px solid #2d7a4f;
+    border-radius: 7px;
+    padding: 0.5cm 0.65cm;
+  }
+  .option5-box h2 {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a4a2e;
+    margin-bottom: 0.22cm;
+  }
+  .option5-box p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #1a3a20;
+  }
+  .option5-box p strong { color: #1a4a2e; }
+
+  /* HAVE YOUR SAY */
+  .say-section {
+    background: #1a4a2e;
+    border-radius: 8px;
+    padding: 0.45cm 0.7cm 0.55cm;
+  }
+  .say-section h2 {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #4caf78;
+    margin-bottom: 0.4cm;
+    text-align: center;
+  }
+  .say-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5cm;
+  }
+  .say-action {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 7px;
+    padding: 0.4cm 0.5cm;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35cm;
+  }
+  .say-num {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #4caf78;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 0.05cm;
+  }
+  .say-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    margin-bottom: 0.1cm;
+  }
+  .say-value {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  .say-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.08cm;
+    line-height: 1.3;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid #cde0d6;
+    padding-top: 0.3cm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6cm;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+  .footer-text {
+    font-size: 0.72rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  .footer-text strong { color: #1a4a2e; }
+  .footer-qr {
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .footer-qr img {
+    width: 1.9cm;
+    height: 1.9cm;
+    display: block;
+    margin: 0 auto;
+  }
+  .footer-qr span {
+    font-size: 0.62rem;
+    color: #555;
+    display: block;
+    margin-top: 0.1cm;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="to">To Irish Rail Workers</div>
+    <h1>Have Your Say on the <span>Depot Access Road</span></h1>
+    <div class="sub">The new Rail Depot at Ballyrichard, Carrigtwohill <br> Your route to work matters to Ballyrichard residents</div>
+  </div>
+
+  <div class="deadline">⏰ Object to Option 7 before Friday 12 June 2026</div>
+
+  <div class="route-box">
+    <h2>What Option 7 means for your daily commute</h2>
+    <p>Roughan &amp; O'Donovan engineers, contracted by Irish Rail, assessed <strong>8 access road options</strong> and rated Option 7 highest — but only by a <strong>narrow margin</strong>. If Option 7 is chosen, staff driving to the depot from the west must travel <strong>into Midleton, out to Waterrock, through Ballyrichard,</strong> then to the car park on the <strong>Carrigtwohill side</strong> of the depot. The Waterrock level crossing is also expected to <strong>close</strong>, adding further congestion to Midleton and Waterrock at every shift change.</p>
+  </div>
+
+  <div class="block">
+    <h2>The harm Option 7 causes</h2>
+    <p>Option 7 is the <span class="red">only option</span> that requires the <strong>destruction of residential gardens and mature native trees</strong> in Ballyrichard. Residents here never objected to the depot. We accepted the night works, road closures and disruption of Phase 2 rail construction — because we believe in public transport. We strongly object to one decision: <strong>routing a staff-only access road through our gardens</strong> when better alternatives were assessed and are available.</p>
+  </div>
+
+  <div class="say-section">
+    <h2>How to have your say — before Friday 12 June 2026</h2>
+    <div class="say-actions">
+      <div class="say-action">
+        <div class="say-num">1</div>
+        <div>
+          <span class="say-label">Online feedback form</span>
+          <div class="say-value">irishrail.ie/CACR</div>
+          <div class="say-sub">Use the official Irish Rail feedback form on their project page</div>
+        </div>
+      </div>
+      <div class="say-action">
+        <div class="say-num">2</div>
+        <div>
+          <span class="say-label">Email</span>
+          <div class="say-value">CACR@irishrail.ie</div>
+          <div class="say-sub">Subject: Objection to Option 7 — Depot Access Road</div>
+        </div>
+      </div>
+      <div class="say-action">
+        <div class="say-num">3</div>
+        <div>
+          <span class="say-label">Community campaign site</span>
+          <div class="say-value">no2option7.org</div>
+          <div class="say-sub">Pre-written objection — takes 2 minutes to send</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">
+      <strong>Ballyrichard residents — Carrigtwohill, Co. Cork</strong><br>
+      We support the Cork Area Commuter Rail Programme. We object to Option 7 only.<br>
+      Consultation closes <strong>Friday 12 June 2026</strong>. Every submission counts.
+    </div>
+    <div class="footer-qr">
+      <img src="data:image/png;base64,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" alt="QR code">
+      <span>no2option7.org</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
