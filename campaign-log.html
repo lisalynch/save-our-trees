@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Campaign Log — No to Option 7</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #4caf78;
+    --green-pale: #e8f5ee;
+    --amber: #e07b00;
+    --red: #c0392b;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #cde0d6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: #f7f9f8;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(20, 50, 30, 0.97);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+  }
+  nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; }
+  nav .logo span { color: var(--green-light); }
+  nav a.back {
+    color: var(--green-light); font-size: 0.85rem; font-weight: 600;
+    text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
+  }
+  nav a.back:hover { color: #fff; }
+
+  .page-header {
+    margin-top: 56px;
+    background: var(--green-dark); color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+  }
+  .page-header .tag {
+    display: inline-block;
+    background: rgba(76,175,120,0.3); color: var(--green-light);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .page-header h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 900; line-height: 1.15; margin-bottom: 0.8rem;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.7); max-width: 580px;
+    margin: 0 auto; font-size: 0.95rem; line-height: 1.6;
+  }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .log-section { padding: 3rem 1.5rem; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+
+  .log-entry {
+    position: relative;
+    margin-bottom: 2.2rem;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--green-light);
+  }
+  .log-entry.support { border-left-color: var(--green-mid); }
+  .log-entry.correspondence { border-left-color: var(--amber); }
+  .log-entry.consultation { border-left-color: #6c8ebf; }
+
+  .log-entry::before {
+    content: '';
+    position: absolute;
+    left: -2.55rem; top: 1.35rem;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--green-light);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--green-light);
+  }
+  .log-entry.support::before { background: var(--green-mid); box-shadow: 0 0 0 2px var(--green-mid); }
+  .log-entry.correspondence::before { background: var(--amber); box-shadow: 0 0 0 2px var(--amber); }
+  .log-entry.consultation::before { background: #6c8ebf; box-shadow: 0 0 0 2px #6c8ebf; }
+
+  .entry-date {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem;
+  }
+  .entry-type {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 2px 9px; border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+  .type-support { background: #e8f5ee; color: var(--green-dark); }
+  .type-correspondence { background: #fff3cd; color: #7a5000; }
+  .type-consultation { background: #e8eef8; color: #2c4a7a; }
+  .type-upcoming { background: #fde8e8; color: #7a1a1a; }
+
+  .log-entry.upcoming {
+    border-left-color: var(--red);
+    background: #fffaf9;
+  }
+  .log-entry.upcoming::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
+
+  .webinar-cta {
+    margin-top: 1rem;
+    background: #fde8e8; border: 1px solid var(--red);
+    border-radius: 8px; padding: 0.9rem 1.1rem;
+  }
+  .webinar-cta p { color: #5a1010; font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.6rem; }
+  .webinar-cta a.signup-btn {
+    display: inline-block;
+    background: var(--red); color: #fff;
+    font-size: 0.82rem; font-weight: 700;
+    padding: 7px 18px; border-radius: 20px;
+    text-decoration: none; letter-spacing: 0.03em;
+  }
+  .webinar-cta a.signup-btn:hover { background: #a0302a; }
+
+  .entry-title {
+    font-size: 1rem; font-weight: 700; color: var(--text);
+    margin-bottom: 0.5rem; line-height: 1.35;
+  }
+  .entry-body {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.65;
+  }
+  .entry-body p + p { margin-top: 0.5rem; }
+  .entry-body a { color: var(--green-mid); text-decoration: none; font-weight: 600; }
+  .entry-body a:hover { color: var(--green-dark); text-decoration: underline; }
+
+  .email-list {
+    margin-top: 0.7rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.7rem;
+  }
+  .email-list li {
+    list-style: none;
+    font-size: 0.88rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f0f5f2;
+    display: flex; align-items: baseline; gap: 0.5rem;
+  }
+  .email-list li:last-child { border-bottom: none; }
+  .email-list .role { color: var(--muted); font-size: 0.82rem; }
+  .email-list a { font-size: 0.82rem; color: var(--amber); }
+
+  .pledge-badge {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: #e8f5ee; border: 1px solid var(--green-light);
+    color: var(--green-dark); border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700; padding: 3px 10px;
+    margin-top: 0.6rem;
+  }
+
+  footer {
+    background: #111; color: rgba(255,255,255,0.5);
+    padding: 2rem 1.5rem; text-align: center; font-size: 0.82rem; line-height: 1.8;
+  }
+  footer a { color: var(--green-light); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">No to <span>Option 7</span></div>
+  <a class="back" href="index.html">&#8592; Back to campaign</a>
+</nav>
+
+<div class="page-header">
+  <div class="tag">Internal record</div>
+  <h1>Campaign Log</h1>
+  <p>A record of actions, meetings, and correspondence taken as part of the campaign against Option 7. Not publicly linked.</p>
+</div>
+
+<section class="log-section">
+  <div class="container">
+    <div class="timeline">
+
+      <!-- ONGOING — Resident submissions -->
+      <div class="log-entry support">
+        <div class="entry-date">Ongoing — closes 19 June 2026</div>
+        <span class="entry-type type-support">Ongoing action</span>
+        <div class="entry-title">Residents sending formal submissions to Irish Rail</div>
+        <div class="entry-body">
+          <p>Residents and supporters are submitting formal objections to Irish Rail on an ongoing basis ahead of the consultation deadline. Submissions can be sent to <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a> or via the tool at <a href="index.html">no2option7.org</a>.</p>
+        </div>
+      </div>
+
+      <!-- PLANNED — Group photo -->
+      <div class="log-entry upcoming">
+        <div class="entry-date">Week of 8 June 2026 — date weather-dependent</div>
+        <span class="entry-type type-upcoming">Planned</span>
+        <div class="entry-title">Group photo of supporters to be taken on location</div>
+        <div class="entry-body">
+          <p>A group photo of local supporters will be taken on the Option 7 route on a fine evening this week, to be added to the campaign website.</p>
+        </div>
+      </div>
+
+      <!-- JUNE 10 2026 — Irish Rail online meeting -->
+      <div class="log-entry upcoming">
+        <div class="entry-date">10 June 2026 — 7:00–8:30pm</div>
+        <span class="entry-type type-upcoming">Upcoming — Online meeting</span>
+        <div class="entry-title">Online public meeting with Irish Rail and Roughan &amp; O'Donovan</div>
+        <div class="entry-body">
+          <p>Irish Rail and Roughan &amp; O'Donovan are hosting an online public meeting for residents and interested parties as part of the PC2 consultation process. This is an opportunity to put your questions directly to the project team before the consultation closes on 19 June.</p>
+          <div class="webinar-cta">
+            <p><strong>Want to attend?</strong> Email Irish Rail to request the joining link. Every person who attends and raises concerns adds weight to our objection. Please share this with neighbours, friends, and anyone who cares about this issue.</p>
+            <a class="signup-btn" href="mailto:CACR@irishrail.ie?subject=Request%20for%20online%20meeting%20link%20%E2%80%94%2010%20June%202026">Email CACR@irishrail.ie to request the link &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- JUNE 7 2026 — Correspondence -->
+      <div class="log-entry correspondence">
+        <div class="entry-date">7 June 2026</div>
+        <span class="entry-type type-correspondence">Correspondence</span>
+        <div class="entry-title">Emails sent to Department of Transport, Cork County Council, and irishcycle.com</div>
+        <div class="entry-body">
+          <p>Formal emails sent to senior officials across the Department of Transport and Cork County Council, and to cycling journalist Cian McGinty of irishcycle.com, outlining grounds of objection and requesting intervention or coverage before the 19 June consultation deadline.</p>
+          <ul class="email-list">
+            <li>
+              <strong>Eamonn Murtagh</strong>
+              <span class="role">— Assistant Secretary, Public Transport, Dept. of Transport</span>
+              <a href="resources/email_murtagh_dept_transport.pdf" target="_blank">View email</a>
+            </li>
+            <li>
+              <strong>Caoimhin O'Ciaruain</strong>
+              <span class="role">— Assistant Secretary, Climate Action &amp; EU/International Affairs, Dept. of Transport</span>
+              <a href="resources/email_ociaruain_dept_transport.pdf" target="_blank">View email</a>
+            </li>
+            <li>
+              <strong>Keith Walsh</strong>
+              <span class="role">— Assistant Secretary, Road Policy and Investment, Dept. of Transport</span>
+              <a href="resources/email_walsh_road_policy.pdf" target="_blank">View email</a>
+            </li>
+            <li>
+              <strong>Padraig Barrett</strong>
+              <span class="role">— Director of Services, Roads, Transportation and Area Services, Cork County Council</span>
+              <a href="resources/email_barrett_cork_county_council.pdf" target="_blank">View email</a>
+            </li>
+            <li>
+              <strong>Cian McGinty</strong>
+              <span class="role">— irishcycle.com</span>
+              <a href="resources/email_mcginty_irishcycle.pdf" target="_blank">View email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JUNE 5 2026 — Irish Rail MCA revision -->
+      <div class="log-entry">
+        <div class="entry-date">5 June 2026</div>
+        <span class="entry-type type-support">Update — Irish Rail</span>
+        <div class="entry-title">Irish Rail confirms it is revising the Multi-Criteria Assessment and depot access road design</div>
+        <div class="entry-body">
+          <p>Irish Rail confirmed that it is revising the Multi-Criteria Assessment and the depot access road design in light of points raised by the local community.</p>
+          <p><strong>Option 7 has not been withdrawn</strong> — Irish Rail has given no date for when the revised assessment will be available.</p>
+          <p style="margin-top:0.7rem; padding:0.7rem 1rem; background:var(--green-pale); border-left:3px solid var(--green-mid); border-radius:0 6px 6px 0; color:var(--green-dark); font-weight:600;">Our objections are being heard. Keep the pressure on — the consultation closes 19 June 2026.</p>
+        </div>
+      </div>
+
+      <!-- JUNE 2 2026 — Cynthia Ni Mhurachu -->
+      <div class="log-entry correspondence">
+        <div class="entry-date">2 June 2026</div>
+        <span class="entry-type type-correspondence">Legal correspondence</span>
+        <div class="entry-title">Cyntia Ni Mhurachu sends letter to Irish Rail on behalf of affected resident</div>
+        <div class="entry-body">
+          <p>Cyntia Ni Mhurachu sent a formal letter to Irish Rail requesting information on behalf of an affected resident.</p>
+        </div>
+      </div>
+
+      <!-- JUNE 4 2026 — Liam Quaide -->
+      <div class="log-entry support">
+        <div class="entry-date">4 June 2026</div>
+        <span class="entry-type type-support">Political support</span>
+        <div class="entry-title">Meeting with Liam Quaide TD</div>
+        <div class="entry-body">
+          <p>Affected residents met with <a href="https://www.oireachtas.ie/en/members/member/Liam-Quaide.D.2024-11-29" target="_blank" rel="noopener">Liam Quaide TD</a> to present the case against Option 7.</p>
+          <div class="pledge-badge">&#10003; Pledged support for the campaign</div>
+        </div>
+      </div>
+
+      <!-- MAY 27 2026 — ROD consultation -->
+      <div class="log-entry consultation">
+        <div class="entry-date">27 May 2026</div>
+        <span class="entry-type type-consultation">Public consultation</span>
+        <div class="entry-title">Residents met Roughan &amp; O'Donovan at My Place — PC2 public consultation</div>
+        <div class="entry-body">
+          <p>A large group of residents and members of the public attended the PC2 public consultation meeting hosted by Roughan &amp; O'Donovan Consulting Engineers (acting on behalf of Irish Rail) at My Place, Midleton. Attendees overwhelmingly and publicly opposed Option 7 directly to the engineers present. The engineering team did not appear to engage meaningfully with the concerns raised.</p>
+        </div>
+      </div>
+
+      <!-- MAY 24 2026 — Website launched -->
+      <div class="log-entry">
+        <div class="entry-date">24 May 2026</div>
+        <span class="entry-type type-correspondence">Campaign action</span>
+        <div class="entry-title">no2option7.org launched and distributed to supporters</div>
+        <div class="entry-body">
+          <p>The campaign website was created and distributed to supporters across the local community. Many residents responded by sending emails of objection to Irish Rail, adding their voices to the formal opposition to Option 7.</p>
+        </div>
+      </div>
+
+      <!-- MAY 23 2026 — Mona Stromsoe -->
+      <div class="log-entry support">
+        <div class="entry-date">23 May 2026</div>
+        <span class="entry-type type-support">Political support</span>
+        <div class="entry-title">Meeting with Mona Stromsoe, Aontú</div>
+        <div class="entry-body">
+          <p>Affected residents met with Mona Stromsoe of Aontú to outline the campaign and grounds of objection.</p>
+          <div class="pledge-badge">&#10003; Pledged support for the campaign</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Campaign log — internal record, not publicly linked. &nbsp;|&nbsp; <a href="index.html">no2option7.org</a></p>
+  <p style="margin-top:0.4rem;">Consultation deadline: <strong style="color:#fff;">19 June 2026</strong> &nbsp;|&nbsp; <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a></p>
+</footer>
+
+</body>
+</html>

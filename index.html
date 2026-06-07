@@ -655,7 +655,7 @@ function sendEmail() {
   body += `\n\nI respectfully request a written response to this submission.\n\nYours sincerely,\n${name}`;
   if (eircode) body += `\nEircode: ${eircode}`;
 
-  const subject = encodeURIComponent('Objection to Option 7 for CACR Depot Access Road - Ballyrichard');
+  const subject = encodeURIComponent('Objection to Option 7 for CACR Depot Access Road');
   const encodedBody = encodeURIComponent(body);
   window.location.href = `mailto:CACR@irishrail.ie?subject=${subject}&body=${encodedBody}`;
 }
