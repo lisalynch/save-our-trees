@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Questions — No to Option 7</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #4caf78;
+    --green-pale: #e8f5ee;
+    --amber: #e07b00;
+    --red: #c0392b;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #cde0d6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: #fff;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(20, 50, 30, 0.97);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+  }
+  nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; }
+  nav .logo span { color: var(--green-light); }
+  nav a.back {
+    color: var(--green-light); font-size: 0.85rem; font-weight: 600;
+    text-decoration: none;
+  }
+  nav a.back:hover { color: #fff; }
+
+  .page-header {
+    margin-top: 56px;
+    background: var(--green-dark); color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+  }
+  .page-header .tag {
+    display: inline-block;
+    background: rgba(76,175,120,0.3); color: var(--green-light);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .page-header h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 900; line-height: 1.15; margin-bottom: 0.8rem;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.75); max-width: 620px;
+    margin: 0 auto; font-size: 1rem; line-height: 1.6;
+  }
+
+  .intro-note {
+    background: #fff8e1; border-left: 4px solid var(--amber);
+    padding: 1.1rem 1.4rem; margin: 2rem auto; max-width: 820px;
+    border-radius: 0 8px 8px 0; font-size: 0.93rem; line-height: 1.65;
+    color: var(--text);
+  }
+  .intro-note strong { color: var(--amber); }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .section-block {
+    border-top: 2px solid var(--border);
+    padding: 2rem 0 1rem;
+  }
+  .section-block:first-of-type { border-top: none; padding-top: 0; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--green-mid);
+    margin-bottom: 1rem;
+  }
+
+  .question-list {
+    list-style: none;
+    padding: 0;
+  }
+  .question-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.7;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .question-list li:last-child { border-bottom: none; }
+  .q-num {
+    flex-shrink: 0;
+    width: 2rem; height: 2rem;
+    background: var(--green-dark); color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700;
+    margin-top: 0.15rem;
+  }
+  .q-text { flex: 1; }
+
+  .tip-block {
+    background: var(--green-pale);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin: 2.5rem 0 3rem;
+    font-size: 0.93rem; line-height: 1.7;
+    color: var(--text);
+  }
+  .tip-block strong { color: var(--green-dark); }
+
+  main {
+    padding: 2.5rem 0 1rem;
+  }
+
+  footer {
+    background: #111; color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem 1.5rem;
+    font-size: 0.82rem; line-height: 1.7;
+  }
+  footer a { color: var(--green-light); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">No to <span>Option 7</span></div>
+  <a class="back" href="index.html">&#8592; Back to main site</a>
+</nav>
+
+<div class="page-header">
+  <div class="tag">Internal — Meeting Prep</div>
+  <h1>Questions for the Irish Rail Meeting</h1>
+  <p>A shortlist to pick from. Meet at 6 to agree which questions to bring.</p>
+</div>
+
+<main>
+<div class="container">
+
+  <div class="intro-note">
+    <strong>Note:</strong> These are sample questions — pick the strongest ones at the 6 o'clock meeting before we go in. Aim for no more than 5–6 so there's time for follow-up. The tip at the bottom applies regardless of which questions you choose.
+  </div>
+
+  <!-- SECTION: MCA REVISION -->
+  <div class="section-block">
+    <div class="section-label">On the MCA revision</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">1</span>
+        <span class="q-text">You confirmed on 5 June that you are revising the Multi-Criteria Assessment and depot access road design. What specifically is being revised — the scoring methodology, the option descriptions, or both? And when will the revised assessment be published?</span>
+      </li>
+      <li>
+        <span class="q-num">2</span>
+        <span class="q-text">Will affected residents have an opportunity to review and respond to the revised MCA before a Railway Order application is filed? If so, how?</span>
+      </li>
+      <li>
+        <span class="q-num">3</span>
+        <span class="q-text">Is Option 7 still the preferred option while the revision is underway, or has it been suspended pending the outcome?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: OPTION 8 -->
+  <div class="section-block">
+    <div class="section-label">On Option 8</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">4</span>
+        <span class="q-text">The OSR states that Option 7 was preferred over Option 8 partly because Option 7 avoids bridge construction. The OSR's own description of Option 8 (Section 4.2) states that Option 8 accesses the N25 via an existing road overbridge. Can you explain how avoiding bridge construction is an advantage of Option 7 over Option 8 when neither option requires a new bridge?</span>
+      </li>
+      <li>
+        <span class="q-num">5</span>
+        <span class="q-text">Option 8 scores identically to Option 7 (4.7 — Slightly Positive) and takes no residential land. Can you explain specifically why Option 7 was selected over Option 8?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: NOISE AND RESIDENTIAL IMPACT -->
+  <div class="section-block">
+    <div class="section-label">On noise and residential impact</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">6</span>
+        <span class="q-text">The noise assessment cites 30 metres as the closest receptor distance. Irish Rail's own plans show the road taking part of the front garden of the closest property, placing the road within 10 metres of the front wall. Will the noise assessment be revised to reflect the actual distance?</span>
+      </li>
+      <li>
+        <span class="q-num">7</span>
+        <span class="q-text">The OSR records under Safety Impacts that Option 7 "introduces HGVs and Low-loader traffic to residential area" — scored as a Negative Impact. How was Option 7 awarded an overall Safety score of 6 (Positive) when it introduces HGV traffic to a residential area?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: FLOOD RISK AND ECOLOGY -->
+  <div class="section-block">
+    <div class="section-label">On flood risk and ecology</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">8</span>
+        <span class="q-text">Residents have photographic evidence of the Option 7 route already flooding under existing conditions. The OSR rates Option 7 as Neutral on flood risk. Will a detailed flood impact assessment be carried out before any route selection is finalised?</span>
+      </li>
+      <li>
+        <span class="q-num">9</span>
+        <span class="q-text">The Water-Rock EcIA (Woodrow APEM, March 2026) confirms five Annex IV bat species and two Red-listed bird species using the Option 7 corridor. This project is not included in the cumulative effects assessment in that report. When will a cumulative ecological assessment be published?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: CYCLEWAY -->
+  <div class="section-block">
+    <div class="section-label">On the cycleway</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">10</span>
+        <span class="q-text">Irish Rail's own engineering drawings show the cycleway running directly alongside the Option 7 access road. The Cork County Council Part 8 cycleway application requires a traffic-free route segregated from vehicles. How is Option 7 compatible with that requirement, and has Cork County Council — as the commissioning authority for the cycleway — been formally consulted on the impact?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: MCA METHODOLOGY -->
+  <div class="section-block">
+    <div class="section-label">On the MCA methodology and weighting</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">11</span>
+        <span class="q-text">The OSR states the MCA is conducted on an "unweighted basis." Your own Presentation acknowledges this "leads to an apparent levelling of scores" and recommends examining why options score higher or lower. Given that Option 7 scores the worst possible mark on Noise &amp; Vibration — a criterion that directly affects people's homes — why was no sensitivity analysis published showing what would happen to the final rankings if residential harm criteria were given appropriate weight?</span>
+      </li>
+      <li>
+        <span class="q-num">12</span>
+        <span class="q-text">Option 7 scores 6 (Positive) on Safety overall, yet the OSR's own Safety Impacts row records that it "introduces HGVs and Low-loader traffic to residential area" as a Negative Impact. Option 5 scores 6 on Safety because it "avoids residential areas" — that language explicitly appears in the Presentation. Why does Option 7 receive the same Safety score as Option 5 when the Presentation itself distinguishes between them on exactly this point?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: ABSOLUTE COSTS -->
+  <div class="section-block">
+    <div class="section-label">On absolute costs</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">13</span>
+        <span class="q-text">Options 5 and 7 are compared in the MCA using CAPEX percentages relative to a baseline — 1,723% and 1,219% respectively. The absolute cost difference has never been published. In the context of a multi-billion euro programme, what is the actual euro difference between Options 5, 7 and 8, and will you publish it before the Railway Order application is filed?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: OPTION 4 AND BALLYADAM BRIDGE -->
+  <div class="section-block">
+    <div class="section-label">On Option 4 and the Ballyadam bridge</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">14</span>
+        <span class="q-text">Option 4 was scored lower partly because it requires reconstruction of OBY7 bridge at Ballyadam. If Option 7 is selected and depot traffic from Cork City diverts via Ballyadam to avoid N25 congestion — as local knowledge suggests it predictably will — that same bridge upgrade becomes necessary regardless of which option was chosen. Has Irish Rail modelled diversion traffic behaviour, and if so, on what basis does the Ballyadam bridge remain a valid cost objection to Option 4?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: TRAFFIC IMPACT ASSESSMENT -->
+  <div class="section-block">
+    <div class="section-label">On the Traffic Impact Assessment</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">15</span>
+        <span class="q-text">The consultation documents do not include a Traffic Impact Assessment for Option 7's operational phase. The N25 Carrigtwohill–Midleton section has been publicly described by Cork County Council as unsafe and not fit for purpose. Depot operations will generate 24-hour HGV movements feeding directly onto this road. When will a Traffic Impact Assessment be published, and will it model both the primary N25 exit and likely diversion routes under congested peak-hour conditions?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: HABITATS DIRECTIVE -->
+  <div class="section-block">
+    <div class="section-label">On the Habitats Directive and derogation</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">16</span>
+        <span class="q-text">The EcIA commissioned for the adjacent Water-Rock development confirms five Annex IV bat species actively using the hedgerow and treeline network along the Ballyrichard More corridor — the same corridor Option 7 would clear. Article 12 of the EU Habitats Directive prohibits deterioration or destruction of breeding sites and resting places for Annex IV species. Has Irish Rail applied for, or been granted, a derogation licence from the NPWS? If not, on what basis has Option 7 been progressed without this assessment being published?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: SAC/SPA -->
+  <div class="section-block">
+    <div class="section-label">On the SAC/SPA hydrological connection</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">17</span>
+        <span class="q-text">The Ballyrichard More stream — which runs directly alongside the Option 7 corridor — discharges to the Owenacurra Estuary and connects to the Great Island Channel SAC and Cork Harbour SPA approximately 2km downstream. Construction and operational drainage from Option 7 could affect this watercourse. Has an Appropriate Assessment screening been carried out for Option 7's potential impacts on these European designated sites, and if so, where is it published?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: OPTION 4 PUBLIC BENEFIT -->
+  <div class="section-block">
+    <div class="section-label">On Option 4's public benefit</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">18</span>
+        <span class="q-text">Option 4, via Ballyadam, would — if the OBY7 bridge is upgraded — provide an alternative public route between Carrigtwohill and Midleton that currently does not exist. In the event of an eastbound N25 incident, there is presently no viable alternative corridor. Option 7 delivers only a private staff access road. Was the potential public road benefit of Option 4 assessed as part of the MCA, and if not, why not?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: CORK COUNTY DEVELOPMENT PLAN -->
+  <div class="section-block">
+    <div class="section-label">On the Cork County Development Plan objective</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">19</span>
+        <span class="q-text">The OSR cites Cork County Development Plan 2022 Objective MD-U-07 — which requires that existing trees and hedgerows be retained where possible — as a factor supporting Option 7. Option 7 requires the felling of mature native trees and clearance of multiple hedgerows. Can you explain how Option 7 is consistent with this objective, given that it proposes the very works the objective is designed to minimise?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION: PEDESTRIAN OVERBRIDGE -->
+  <div class="section-block">
+    <div class="section-label">On the pedestrian overbridge</div>
+    <ol class="question-list">
+      <li>
+        <span class="q-num">20</span>
+        <span class="q-text">Cork County Council has agreed in principle to a pedestrian overbridge connecting the communities on both sides of the rail line. Residents south of the tracks have waited years for this crossing. Can Irish Rail confirm that the depot construction programme and associated works will not further delay delivery of the pedestrian overbridge, and will this commitment be reflected in the Railway Order application?</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- TIP -->
+  <div class="tip-block">
+    <strong>Practical tip:</strong> Ask for written answers to any question that isn't answered fully at the meeting — you can request that responses be provided in writing before the 19 June deadline. That creates a formal record. Good luck this evening.
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <p>Internal document — not linked from the main site.</p>
+  <p style="margin-top:0.5rem;"><a href="index.html">&#8592; Return to main site</a></p>
+</footer>
+
+</body>
+</html>
