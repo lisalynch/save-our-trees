@@ -61,18 +61,23 @@
   /* ── HERO ── */
   .hero {
     position: relative; height: 100vh; min-height: 560px;
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: flex-start; justify-content: center;
     overflow: hidden;
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url('garden.jpg') center/cover no-repeat;
-    filter: brightness(0.45) saturate(0.7);
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.35) 40%,
+        rgba(0,0,0,0.08) 65%,
+        rgba(0,0,0,0.30) 100%),
+      url('photos/PHOTO-2026-06-11-21-08-57.jpg') center 30%/cover no-repeat;
   }
   .hero-content {
     position: relative; z-index: 2;
     text-align: center; color: #fff;
-    padding: 2rem;
+    padding: 5.5rem 2rem 2rem;
     max-width: 800px;
   }
   .hero-tag {
@@ -310,7 +315,7 @@
 <nav>
   <div class="logo">No to <span>Option 7</span></div>
   <div class="nav-links">
-    
+    <a href="gallery.html">Gallery</a>
     <div class="deadline">Deadline: 19 June 2026</div>
   </div>
 </nav>
@@ -337,6 +342,7 @@
     <div class="hero-btns">
       <a href="#object" class="btn btn-primary">Send your objection</a>
       <a href="technical-evidence.html" class="btn btn-outline">Read our technical evidence</a>
+      <a href="gallery.html" class="btn btn-outline">See the protest gallery</a>
       <a href="#background" class="btn btn-outline">Learn more</a>
     </div>
   </div>
@@ -349,7 +355,7 @@
     <div class="section-label">The Threat</div>
     <h2>What is Irish Rail proposing to do?</h2>
     <p>The Cork Area Commuter Rail Programme Phase 2 includes a new maintenance depot near Ballyrichard, east of Carrigtwohill. What we don't support is <strong>Option 7</strong> — the proposed access road chosen to reach it.</p>
-    <p>Of eight options assessed, Irish Rail selected the route that causes the most harm to local residents. Option 7 would pass directly through private residential front gardens, requiring the compulsory acquisition of garden land and the felling of mature native trees that have stood for generations.</p>
+    <p>Of eight options assessed, Irish Rail selected the route that causes the most harm to local residents. Option 7 would pass directly through private residential front gardens, including the one in the photo above, requiring the compulsory acquisition of garden land and the felling of mature native trees that have stood for generations.</p>
 
     <div class="threat-grid">
       <div class="threat-card">
@@ -427,16 +433,8 @@
       </div>
     </div>
 
-    <div style="margin-top:2rem; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12);">
-      <img src="cotter1.JPG" alt="The residential garden that Option 7 would cut through — mature native trees including oak, ash and willow, established over decades" style="width:100%; display:block; max-height:480px; object-fit:cover; object-position:center;">
-      <div style="background:#fff; padding:1rem 1.4rem; border-top:3px solid var(--red);">
-        <div class="map-badge badge-red" style="margin-bottom:0.4rem;">Proposed Option 7 route</div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:var(--green-dark); margin-bottom:0.3rem;">One of the front gardens that would be destroyed</h3>
-        <p style="font-size:0.85rem; margin:0;">Along with the top photo, this is another private residential front garden through which Option 7 would cut a staff access road. Mature trees — including maple, ash and willow — have grown here for decades. Option 7 is the only one of the eight access road options assessed that requires the permanent acquisition of residential garden land.</p>
-      </div>
-    </div>
 
-    <div class="mca-callout">
+<div class="mca-callout">
       <h3>The key word in Irish Rail's own report</h3>
       <p>The PC2 Project Report states: <strong>"Option 7 narrowly edges out Option 8 on Land Use Impacts and Local Environment Impacts. It is recommended that Option 7 be the Emerging Preferred Option."</strong><br><br>
       A narrow margin decided a choice that permanently destroys residential front gardens and mature native trees. We are asking Irish Rail to review that decision.</p>

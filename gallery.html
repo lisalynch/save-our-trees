@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EG2HHEB1G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5EG2HHEB1G');
+</script>
+<title>Gallery — No to Option 7</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #4caf78;
+    --green-pale: #e8f5ee;
+    --amber: #e07b00;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #cde0d6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: #fff;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(20, 50, 30, 0.97);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+  }
+  nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; }
+  nav .logo span { color: var(--green-light); }
+  nav a.back {
+    color: var(--green-light); font-size: 0.85rem; font-weight: 600;
+    text-decoration: none;
+  }
+  nav a.back:hover { color: #fff; }
+
+  .page-header {
+    margin-top: 56px;
+    background: var(--green-dark); color: #fff;
+    padding: 3.5rem 1.5rem 3rem;
+    text-align: center;
+  }
+  .page-header .tag {
+    display: inline-block;
+    background: rgba(76,175,120,0.3); color: var(--green-light);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .page-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900; line-height: 1.1; margin-bottom: 0.8rem;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.75); max-width: 600px;
+    margin: 0 auto; font-size: 1rem; line-height: 1.6;
+  }
+
+  /* GALLERY GRID */
+  .gallery-section { padding: 3rem 1.5rem 4rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .gallery-grid .gallery-item:first-child {
+    grid-column: 1 / -1;
+  }
+  .gallery-grid .gallery-item:first-child img {
+    height: 440px;
+  }
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid .gallery-item:first-child img { height: 280px; }
+  }
+  @media (max-width: 440px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid .gallery-item:first-child { grid-column: 1; }
+    .gallery-grid .gallery-item:first-child img { height: 240px; }
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f0f0f0;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  }
+  .gallery-item img {
+    width: 100%; display: block;
+    height: 240px; object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .gallery-item:hover img { transform: scale(1.03); }
+
+  .caption {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.83rem; color: var(--muted);
+    line-height: 1.5; background: #fff;
+    border-top: 1px solid var(--border);
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.92);
+    align-items: center; justify-content: center;
+  }
+  .lightbox.open { display: flex; }
+
+  .lightbox-inner {
+    position: relative;
+    max-width: 92vw; max-height: 92vh;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .lightbox-inner img {
+    max-width: 100%; max-height: 80vh;
+    border-radius: 6px;
+    display: block;
+  }
+  .lightbox-caption {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.88rem; margin-top: 1rem;
+    text-align: center; max-width: 600px;
+    line-height: 1.5;
+  }
+
+  .lightbox-close {
+    position: fixed; top: 1.2rem; right: 1.4rem;
+    color: #fff; font-size: 2rem; font-weight: 300;
+    cursor: pointer; line-height: 1;
+    background: none; border: none; padding: 0.3rem;
+    opacity: 0.7; transition: opacity 0.15s;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  .lightbox-nav {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: none; color: #fff; font-size: 1.8rem;
+    padding: 0.8rem 1rem; cursor: pointer;
+    border-radius: 6px; line-height: 1;
+    transition: background 0.15s;
+  }
+  .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+  .lightbox-prev { left: 1rem; }
+  .lightbox-next { right: 1rem; }
+
+  footer {
+    background: #111; color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem 1.5rem;
+    font-size: 0.82rem; line-height: 1.7;
+  }
+  footer a { color: var(--green-light); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">No to <span>Option 7</span></div>
+  <a class="back" href="index.html">&#8592; Back to main site</a>
+</nav>
+
+<div class="page-header">
+  <div class="tag">11 June 2026</div>
+  <h1>Local Protest</h1>
+  <p>Locals gathered on 11 June 2026 to show their opposition to Option 7. <br> Click to enlarge</p>
+</div>
+
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-grid">
+
+      <!-- Featured — full width -->
+      <div class="gallery-item" data-index="0">
+        <img src="photos/PHOTO-2026-06-11-21-08-57.jpg" alt="Residents gathered at Cotter's Gate, 11 June 2026">
+        <div class="caption">One of the gardens the the proposed road would run through</div>
+      </div>
+
+      <div class="gallery-item" data-index="1">
+        <img src="photos/IMG_8464.jpg" alt="Large group of residents at Cotter's Gate with handmade signs">
+      </div>
+
+      <div class="gallery-item" data-index="2">
+        <img src="photos/IMG_8465.jpg" alt="Residents at Cotter's Gate with handmade signs">
+      </div>
+
+      <div class="gallery-item" data-index="3">
+        <img src="photos/PHOTO-2026-06-11-21-08-56.jpg" alt="Aerial view of the community gathering at Cotter's Gate">
+        <div class="caption">Aerial view of the gathering at Cotter's Gate.</div>
+      </div>
+
+      <div class="gallery-item" data-index="4">
+        <img src="photos/PHOTO-2026-06-11-21-08-55.jpg" alt="Overhead drone shot of residents gathered at Cotter's Gate">
+        <div class="caption">The lane that would become a wide two lane road, running through front gardens</div>
+
+      </div>
+
+      <div class="gallery-item" data-index="5">
+        <img src="photos/PHOTO-2026-06-11-21-03-21 4.jpg" alt="Large group of residents with handmade signs">
+      </div>
+
+      <div class="gallery-item" data-index="6">
+        <img src="photos/PHOTO-2026-06-11-21-17-17.jpg" alt="Residents holding letters spelling No 2 Option 7">
+      </div>
+
+      <div class="gallery-item" data-index="7">
+        <img src="photos/PHOTO-2026-06-11-21-05-55.jpg" alt="No 2 Option 7 sign made from found objects">
+      </div>
+
+      <div class="gallery-item" data-index="8">
+        <img src="photos/PHOTO-2026-06-11-21-05-57 6.jpg" alt="Don't knock our trees sign against a garden wall">
+      </div>
+
+      <div class="gallery-item" data-index="9">
+        <img src="photos/PHOTO-2026-06-11-21-05-57 5.jpg" alt="Residents with No 2 Option 7 sign under a mature tree">
+      </div>
+
+      <div class="gallery-item" data-index="10">
+        <img src="photos/PHOTO-2026-06-11-21-05-57 4.jpg" alt="Two young girls with handmade signs">
+      </div>
+
+      <div class="gallery-item" data-index="11">
+        <img src="photos/PHOTO-2026-06-11-21-05-57 2.jpg" alt="Family with horse and dog holding protest signs">
+      </div>
+
+      <div class="gallery-item" data-index="12">
+        <img src="photos/PHOTO-2026-06-11-21-05-57 3.jpg" alt="Family with horse holding protest signs">
+      </div>
+
+      <div class="gallery-item" data-index="13">
+        <img src="photos/PHOTO-2026-06-11-21-05-56.jpg" alt="Group of residents with handmade signs">
+      </div>
+
+ 
+
+      <div class="gallery-item" data-index="15">
+        <img src="photos/PHOTO-2026-06-11-21-03-21 3.jpg" alt="Children holding handmade protest signs">
+      </div>
+
+      <div class="gallery-item" data-index="16">
+        <img src="photos/PHOTO-2026-06-11-21-03-21.jpg" alt="Family holding No to Option 7 banner">
+      </div>
+
+      <div class="gallery-item" data-index="17">
+        <img src="photos/PHOTO-2026-06-11-21-03-21 2.jpg" alt="Family holding No to Option 7 banner">
+      </div>
+
+      <div class="gallery-item" data-index="18">
+        <img src="photos/IMG_8458.jpg" alt="Couple holding Don't Knock Our Trees sign on the lane">
+      </div>
+
+      <div class="gallery-item" data-index="19">
+        <img src="photos/IMG_8466.jpg" alt="Family group on the lawn with protest signs">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8249;</button>
+  <div class="lightbox-inner">
+    <img id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-caption"></div>
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lb-next">&#8250;</button>
+</div>
+
+<footer>
+  <p>Consultation closes <strong style="color:#fff;">19 June 2026</strong> &nbsp;|&nbsp; <a href="mailto:CACR@irishrail.ie">CACR@irishrail.ie</a></p>
+  <p style="margin-top:0.4rem;"><a href="index.html">&#8592; Return to main site</a></p>
+</footer>
+
+<script>
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCaption = document.getElementById('lb-caption');
+  let current = 0;
+
+  function openLightbox(index) {
+    current = index;
+    const item = items[current];
+    lbImg.src = item.querySelector('img').src;
+    lbImg.alt = item.querySelector('img').alt;
+    const cap = item.querySelector('.caption');
+    lbCaption.textContent = cap ? cap.textContent.trim() : '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(dir) {
+    current = (current + dir + items.length) % items.length;
+    openLightbox(current);
+  }
+
+  items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => navigate(-1));
+  document.getElementById('lb-next').addEventListener('click', () => navigate(1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
+</script>
+
+</body>
+</html>
